@@ -30,9 +30,43 @@ def won?(board)
         
         if position_1 == "X" && position_2 == "X" && position_3 == "X"
           return win_combination # return the win_combination indexes that won.
-        elseif position_1 == "O" && position_2 == "O" && position_3 == "O"
+        elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
           return win_combination
         end
   end
-  nil
+  false
+end
+
+def full?(board)
+  board.all? do |index|
+    if index == " "
+       false
+    else
+      true
+    end
+  end
+end
+
+def draw?(board)
+  if full?(board) == true
+    if won?(board) == false
+      true
+    else
+      false
+    end
+  else 
+    false
+  end
+end
+  
+def over?(board)
+  won?(board) || draw?(board)
+end
+
+def winner(board)
+  won?(board)
+    return board[win_index_1]
+  end
+    
+      
 end
