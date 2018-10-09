@@ -78,7 +78,7 @@ def winner(board)
       
       if position_1 =="X"
         return "X"
-      elsif position_1 == "O"
+      else
         return "O"
       end
   end
